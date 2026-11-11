@@ -10,42 +10,12 @@ function getAppId(game) {
   return null
 }
 
-function GameCard({ game }) {
-  const appId = getAppId(game)
-  const thumb = appId
-    ? `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appId}/capsule_616x353.jpg`
-    : null
-  const hasTranslation = game.translations && game.translations.length > 0
-  const translationName = hasTranslation ? game.translations[0].teamName : null
-
-  return (
-    <div className="game-card">
-      {thumb
-        ? <img className="game-thumb" src={thumb} alt={game.title} loading="lazy" />
-        : <div className="game-thumb" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,.2)', fontSize: '2rem' }}>🎮</div>
-      }
-      <div className="game-info">
-        <div className="game-title">{game.title}</div>
-        <span className={`game-badge ${hasTranslation ? 'badge-available' : 'badge-unavailable'}`}>
-          {hasTranslation ? '✓ متوفر تعريب' : '✗ غير معرب'}
-        </span>
-        {translationName && (
-          <div className="game-meta">فريق {translationName}</div>
-        )}
-        {game.category && (
-          <div className="game-meta">{game.category}</div>
-        )}
-      </div>
-    </div>
-  )
-}
-
 export default function Library() {
   const [games, setGames] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [search, setSearch] = useState('')
-  const [filter, setFilter] = useState('all') // all | available | unavailable
+  const [filter, setFilter] = useState('all')
 
   useEffect(() => {
     fetch(API_URL)
@@ -55,7 +25,7 @@ export default function Library() {
         setLoading(false)
       })
       .catch(() => {
-        setError('تعذّر تحميل البيانات')
+        setError('تعذّر الاتصال بخادم سراب وجلب الألعاب')
         setLoading(false)
       })
   }, [])
@@ -68,31 +38,102 @@ export default function Library() {
   })
 
   return (
-    <div className="library-section">
-      <h2 className="section-title" style={{ marginBottom: '.5rem' }}>مكتبة الألعاب</h2>
-      <p className="section-sub">جميع الألعاب المتاحة في منصة سراب</p>
+    <div style={{ padding: '120px 5% 60px', maxWidth: '1300px', margin: '0 auto' }}>
+      <div className="section-header">
+        <div className="section-tag">مكتبة سراب المفتوحة</div>
+        <h1 className="section-title">دليل الألعاب والتعريبات المتاحة</h1>
+        <p style={{ color: 'var(--text-muted)', marginTop: '10px' }}>
+          تصفح قائمة الألعاب المتاحة وتحقق من حالة توفر التعريب الرسمي لكل عنوان
+        </p>
+      </div>
 
-      <div className="library-controls">
+      <div className="search-container">
         <input
-          className="search-box"
-          placeholder="🔍 ابحث عن لعبة..."
+          className="search-input"
+          placeholder="🔍 ابحث عن اسم اللعبة..."
           value={search}
           onChange={e => setSearch(e.target.value)}
         />
-        <button className={`filter-btn ${filter === 'all' ? 'active' : ''}`} onClick={() => setFilter('all')}>الكل</button>
-        <button className={`filter-btn ${filter === 'available' ? 'active' : ''}`} onClick={() => setFilter('available')}>متوفر تعريب</button>
-        <button className={`filter-btn ${filter === 'unavailable' ? 'active' : ''}`} onClick={() => setFilter('unavailable')}>غير معرب</button>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <button className={`filter-btn ${filter === 'all' ? 'active' : ''}`} onClick={() => setFilter('all')}>
+            الكل ({games.length})
+          </button>
+          <button className={`filter-btn ${filter === 'available' ? 'active' : ''}`} onClick={() => setFilter('available')}>
+            متوفر تعريب
+          </button>
+          <button className={`filter-btn ${filter === 'unavailable' ? 'active' : ''}`} onClick={() => setFilter('unavailable')}>
+            قيد الانتظار
+          </button>
+        </div>
       </div>
 
-      {loading && <div className="loading"><div className="spinner" /></div>}
-      {error && <p style={{ textAlign: 'center', color: '#f87171', padding: '3rem' }}>{error}</p>}
+      {loading && (
+        <div style={{ textAlign: 'center', padding: '80px 0' }}>
+          <div style={{ 
+            width: '45px', 
+            height: '45px', 
+            borderRadius: '50%', 
+            border: '3px solid rgba(168,85,247,0.2)', 
+            borderTopColor: 'var(--brand)', 
+            animation: 'spin 0.8s linear infinite',
+            margin: '0 auto 15px'
+          }}></div>
+          <p style={{ color: 'var(--text-muted)' }}>جاري تحميل مكتبة الألعاب...</p>
+        </div>
+      )}
+
+      {error && (
+        <div style={{ textAlign: 'center', color: '#f87171', padding: '60px 0' }}>
+          <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{error}</p>
+        </div>
+      )}
+
       {!loading && !error && (
         <>
-          <p style={{ color: 'rgba(255,255,255,.4)', fontSize: '.85rem', marginBottom: '1.25rem' }}>
-            {filtered.length} لعبة
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '20px' }}>
+            تم العثور على <strong>{filtered.length}</strong> لعبة
           </p>
           <div className="games-grid">
-            {filtered.map(g => <GameCard key={g.id} game={g} />)}
+            {filtered.map(game => {
+              const appId = getAppId(game)
+              const thumb = appId 
+                ? `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appId}/capsule_616x353.jpg`
+                : null
+              const hasTranslation = game.translations && game.translations.length > 0
+              const team = hasTranslation ? game.translations[0].teamName : null
+
+              return (
+                <div key={game.id} className="game-card">
+                  <div className="game-card-img-wrap">
+                    {thumb ? (
+                      <img src={thumb} alt={game.title} className="game-card-img" loading="lazy" />
+                    ) : (
+                      <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#666' }}>🎮</div>
+                    )}
+                  </div>
+                  <div className="game-card-content">
+                    <div className="game-card-title">{game.title}</div>
+                    <div className="game-card-badges">
+                      <span className={`badge-tag ${hasTranslation ? 'badge-green' : 'badge-purple'}`}>
+                        {hasTranslation ? '✓ تعريب متوفر' : '⏳ قريباً'}
+                      </span>
+                      {team && <span className="badge-tag badge-purple">{team}</span>}
+                    </div>
+                    <div className="game-card-footer">
+                      <span>{game.category || 'PC'}</span>
+                      <a 
+                        href="https://github.com/z56sa/mode/releases/latest" 
+                        target="_blank" 
+                        rel="noreferrer"
+                        style={{ color: 'var(--brand-cyan)', textDecoration: 'none', fontWeight: 'bold' }}
+                      >
+                        ثبّت عبر سراب ←
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </>
       )}
