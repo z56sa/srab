@@ -68,8 +68,8 @@ export default function Home() {
           <div className="hero-stage">
             <div className="hero-screen">
               <img 
-                src="/app-preview.jpg" 
-                alt="تطبيق سراب" 
+                src="/app-clean.jpg" 
+                alt="واجهة تطبيق سراب" 
                 onError={(e) => { e.target.style.display = 'none' }}
               />
             </div>
