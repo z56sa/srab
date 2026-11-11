@@ -7,7 +7,7 @@ export default function Nav() {
       <div className="bar">
         <Link to="/" className="brand">
           <img 
-            src="/srab/logo.png" 
+            src="/logo.png" 
             alt="شعار سراب" 
             className="brand-icon"
             onError={(e) => { e.target.style.display = 'none' }}

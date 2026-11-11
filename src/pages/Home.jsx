@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const DOWNLOAD_URL = 'https://github.com/z56sa/mode/releases/download/v1.0.0/default.exe'
 const DISCORD_URL = 'https://discord.gg/uXEpd8wc9T'
-const API_URL = '/srab/games.json'
+const API_URL = '/games.json'
 
 function getAppId(game) {
   for (const img of [game.thumbnailImage, game.bannerImage]) {
@@ -67,7 +67,7 @@ export default function Home() {
           <div className="hero-stage">
             <div className="hero-screen">
               <img 
-                src="/srab/app-preview.jpg" 
+                src="/app-preview.jpg" 
                 alt="تطبيق سراب" 
                 onError={(e) => { e.target.style.display = 'none' }}
               />
@@ -180,7 +180,7 @@ export default function Home() {
       <section className="vault" id="download">
         <div className="wrap">
           <img 
-            src="/srab/logo.png" 
+            src="/logo.png" 
             alt="سراب" 
             className="mark-icon" 
             onError={(e) => { e.target.style.display = 'none' }}

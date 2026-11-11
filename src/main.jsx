@@ -8,7 +8,7 @@ import Nav from './components/Nav'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/srab">
+    <BrowserRouter basename="/">
       <Nav />
       <div className="page">
         <Routes>

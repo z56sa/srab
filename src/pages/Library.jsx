@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const API_URL = '/srab/games.json'
+const API_URL = '/games.json'
 
 function getAppId(game) {
   for (const img of [game.thumbnailImage, game.bannerImage]) {
