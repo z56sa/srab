@@ -49,18 +49,19 @@ export default function Home() {
           </p>
 
           <div className="cta">
-            <a href={DOWNLOAD_URL} className="btn btn-light" download>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              <span>حمّل سراب مجاناً</span>
+            <a href={DOWNLOAD_URL} className="btn btn-light" download="Srab-Setup-1.0.0.exe">
+              <span>بدأ التحميل</span>
             </a>
 
-            <Link to="/library" className="btn btn-glass">
-              <span>استعرض الألعاب</span>
-            </Link>
+            <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="btn btn-glass">
+              <span>انضم لسيرفر Discord</span>
+            </a>
+          </div>
+
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', fontSize: '13px', color: 'var(--t3)', marginTop: '-45px', marginBottom: '60px' }}>
+            <span>• مجاني للجميع</span>
+            <span>• 180 ميغا</span>
+            <span>• تحديث تلقائي</span>
           </div>
 
           {/* APP STAGE PREVIEW */}
