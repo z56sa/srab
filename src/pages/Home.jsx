@@ -49,7 +49,7 @@ export default function Home() {
           </p>
 
           <div className="cta">
-            <a href={DOWNLOAD_URL} target="_blank" rel="noreferrer" className="btn btn-light">
+            <a href={DOWNLOAD_URL} className="btn btn-light" download>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="7 10 12 15 17 10"></polyline>
@@ -189,7 +189,7 @@ export default function Home() {
           <p className="sub">حمّل سراب الحين، واستمتع بألعابك بلغتك الأم.</p>
 
           <div className="cta">
-            <a href={DOWNLOAD_URL} target="_blank" rel="noreferrer" className="btn btn-light" style={{ height: '64px', padding: '0 44px', fontSize: '18px' }}>
+            <a href={DOWNLOAD_URL} className="btn btn-light" download style={{ height: '64px', padding: '0 44px', fontSize: '18px' }}>
               <span>تحميل تطبيق سراب للويندوز</span>
             </a>
           </div>
