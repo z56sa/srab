@@ -25,7 +25,7 @@ export default function Library() {
         setLoading(false)
       })
       .catch(() => {
-        setError('تعذّر الاتصال بخادم سراب وجلب الألعاب')
+        setError('تعذّر جلب الألعاب')
         setLoading(false)
       })
   }, [])
@@ -38,62 +38,65 @@ export default function Library() {
   })
 
   return (
-    <div style={{ padding: '120px 5% 60px', maxWidth: '1300px', margin: '0 auto' }}>
-      <div className="section-header">
-        <div className="section-tag">مكتبة سراب المفتوحة</div>
-        <h1 className="section-title">دليل الألعاب والتعريبات المتاحة</h1>
-        <p style={{ color: 'var(--text-muted)', marginTop: '10px' }}>
-          تصفح قائمة الألعاب المتاحة وتحقق من حالة توفر التعريب الرسمي لكل عنوان
-        </p>
+    <div className="wrap" style={{ padding: '140px 0 80px' }}>
+      <div className="section-title">
+        <h1 className="h2 metal">مكتبة الألعاب.</h1>
+        <p className="sub">استعرض وتعرف على الألعاب المعربة المتاحة في منصة سراب.</p>
       </div>
 
-      <div className="search-container">
+      <div style={{ display: 'flex', gap: '14px', maxWidth: '700px', margin: '0 auto 50px', flexWrap: 'wrap' }}>
         <input
-          className="search-input"
-          placeholder="🔍 ابحث عن اسم اللعبة..."
+          style={{
+            flex: '1',
+            minWidth: '240px',
+            background: 'rgba(255,255,255,0.03)',
+            border: '1px solid var(--edge)',
+            borderRadius: '999px',
+            padding: '12px 24px',
+            color: '#fff',
+            font: 'inherit',
+            outline: 'none'
+          }}
+          placeholder="ابحث عن لعبة..."
           value={search}
           onChange={e => setSearch(e.target.value)}
         />
         <div style={{ display: 'flex', gap: '8px' }}>
-          <button className={`filter-btn ${filter === 'all' ? 'active' : ''}`} onClick={() => setFilter('all')}>
-            الكل ({games.length})
+          <button 
+            className={`btn btn-glass`} 
+            style={{ height: '48px', padding: '0 20px', borderRadius: '999px', background: filter === 'all' ? 'rgba(255,255,255,0.15)' : undefined }}
+            onClick={() => setFilter('all')}
+          >
+            الكل
           </button>
-          <button className={`filter-btn ${filter === 'available' ? 'active' : ''}`} onClick={() => setFilter('available')}>
-            متوفر تعريب
-          </button>
-          <button className={`filter-btn ${filter === 'unavailable' ? 'active' : ''}`} onClick={() => setFilter('unavailable')}>
-            قيد الانتظار
+          <button 
+            className={`btn btn-glass`} 
+            style={{ height: '48px', padding: '0 20px', borderRadius: '999px', background: filter === 'available' ? 'rgba(255,255,255,0.15)' : undefined }}
+            onClick={() => setFilter('available')}
+          >
+            معرب فقط
           </button>
         </div>
       </div>
 
       {loading && (
-        <div style={{ textAlign: 'center', padding: '80px 0' }}>
-          <div style={{ 
-            width: '45px', 
-            height: '45px', 
-            borderRadius: '50%', 
-            border: '3px solid rgba(168,85,247,0.2)', 
-            borderTopColor: 'var(--brand)', 
-            animation: 'spin 0.8s linear infinite',
-            margin: '0 auto 15px'
-          }}></div>
-          <p style={{ color: 'var(--text-muted)' }}>جاري تحميل مكتبة الألعاب...</p>
+        <div style={{ textAlign: 'center', padding: '80px 0', color: 'var(--t2)' }}>
+          جاري تحميل المكتبة...
         </div>
       )}
 
       {error && (
-        <div style={{ textAlign: 'center', color: '#f87171', padding: '60px 0' }}>
-          <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{error}</p>
+        <div style={{ textAlign: 'center', padding: '60px 0', color: '#ff6b6b' }}>
+          {error}
         </div>
       )}
 
       {!loading && !error && (
         <>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '20px' }}>
-            تم العثور على <strong>{filtered.length}</strong> لعبة
+          <p style={{ color: 'var(--t3)', fontSize: '14px', marginBottom: '24px' }}>
+            {filtered.length} لعبة مسجلة
           </p>
-          <div className="games-grid">
+          <div className="gallery-grid">
             {filtered.map(game => {
               const appId = getAppId(game)
               const thumb = appId 
@@ -103,32 +106,21 @@ export default function Library() {
               const team = hasTranslation ? game.translations[0].teamName : null
 
               return (
-                <div key={game.id} className="game-card">
-                  <div className="game-card-img-wrap">
+                <div key={game.id} className="game-item">
+                  <div className="game-poster">
                     {thumb ? (
-                      <img src={thumb} alt={game.title} className="game-card-img" loading="lazy" />
+                      <img src={thumb} alt={game.title} loading="lazy" />
                     ) : (
-                      <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#666' }}>🎮</div>
+                      <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>🎮</div>
                     )}
                   </div>
-                  <div className="game-card-content">
-                    <div className="game-card-title">{game.title}</div>
-                    <div className="game-card-badges">
-                      <span className={`badge-tag ${hasTranslation ? 'badge-green' : 'badge-purple'}`}>
-                        {hasTranslation ? '✓ تعريب متوفر' : '⏳ قريباً'}
+                  <div className="game-details">
+                    <div className="game-name">{game.title}</div>
+                    <div className="game-chips">
+                      <span className={`chip ${hasTranslation ? 'chip-ok' : ''}`}>
+                        {hasTranslation ? '✓ معرب' : 'غير متوفر'}
                       </span>
-                      {team && <span className="badge-tag badge-purple">{team}</span>}
-                    </div>
-                    <div className="game-card-footer">
-                      <span>{game.category || 'PC'}</span>
-                      <a 
-                        href="https://github.com/z56sa/mode/releases/latest" 
-                        target="_blank" 
-                        rel="noreferrer"
-                        style={{ color: 'var(--brand-cyan)', textDecoration: 'none', fontWeight: 'bold' }}
-                      >
-                        ثبّت عبر سراب ←
-                      </a>
+                      {team && <span className="chip">{team}</span>}
                     </div>
                   </div>
                 </div>

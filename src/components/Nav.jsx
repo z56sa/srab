@@ -3,25 +3,31 @@ import { Link, useLocation } from 'react-router-dom'
 export default function Nav() {
   const { pathname } = useLocation()
   return (
-    <nav>
-      <Link to="/" className="nav-brand">
-        <img src="/srab/logo.png" alt="Srab Logo" className="nav-logo-img" onError={(e) => { e.target.style.display = 'none' }} />
-        <span className="nav-title">سراب</span>
-      </Link>
-      
-      <div className="nav-links">
-        <Link to="/" className={`nav-link ${pathname === '/' ? 'active' : ''}`}>الرئيسية</Link>
-        <Link to="/library" className={`nav-link ${pathname === '/library' ? 'active' : ''}`}>المكتبة</Link>
-        <a href="https://discord.gg/uXEpd8wc9T" target="_blank" rel="noreferrer" className="nav-link">
-          ديسكورد
-        </a>
-        <a
-          href="https://github.com/z56sa/mode/releases/latest"
+    <nav className="nav">
+      <div className="bar">
+        <Link to="/" className="brand">
+          <img 
+            src="/srab/logo.png" 
+            alt="شعار سراب" 
+            className="brand-icon"
+            onError={(e) => { e.target.style.display = 'none' }}
+          />
+          <span className="metal">سراب</span>
+        </Link>
+
+        <div className="nav-links">
+          <Link to="/" className={pathname === '/' ? 'active' : ''}>الرئيسية</Link>
+          <Link to="/library" className={pathname === '/library' ? 'active' : ''}>المكتبة</Link>
+          <a href="https://discord.gg/uXEpd8wc9T" target="_blank" rel="noreferrer">ديسكورد</a>
+        </div>
+
+        <a 
+          href="https://github.com/z56sa/mode/releases/latest" 
           target="_blank" 
-          rel="noreferrer"
-          className="nav-cta"
+          rel="noreferrer" 
+          className="btn btn-light"
         >
-          تحميل التطبيق
+          <span>حمّل سراب</span>
         </a>
       </div>
     </nav>
