@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const API_URL = 'https://polar-download-gateway.mdmrksad1ksa.workers.dev/api/content'
+const API_URL = '/srab/games.json'
 
 function getAppId(game) {
   for (const img of [game.thumbnailImage, game.bannerImage]) {

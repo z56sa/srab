@@ -22,12 +22,12 @@ export default function Nav() {
         </div>
 
         <a 
-          href="https://github.com/z56sa/mode/releases/latest" 
+          href="https://discord.gg/uXEpd8wc9T" 
           target="_blank" 
           rel="noreferrer" 
           className="btn btn-light"
         >
-          <span>حمّل سراب</span>
+          <span>انضم للديسكورد</span>
         </a>
       </div>
     </nav>

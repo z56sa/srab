@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-const DOWNLOAD_URL = 'https://github.com/z56sa/mode/releases/latest'
+const DOWNLOAD_URL = '#download'
 const DISCORD_URL = 'https://discord.gg/uXEpd8wc9T'
-const API_URL = 'https://polar-download-gateway.mdmrksad1ksa.workers.dev/api/content'
+const API_URL = '/srab/games.json'
 
 function getAppId(game) {
   for (const img of [game.thumbnailImage, game.bannerImage]) {

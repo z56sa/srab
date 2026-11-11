@@ -89,10 +89,11 @@ a {
   margin-inline: auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 64px;
-  padding-inline: 22px 10px;
+  padding-inline: 24px 12px;
   border-radius: 999px;
-  background: rgba(10, 10, 10, 0.65);
+  background: rgba(10, 10, 10, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--edge);
@@ -107,6 +108,7 @@ a {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: -0.5px;
+  flex-shrink: 0;
 }
 
 .brand-icon {
@@ -122,7 +124,7 @@ a {
   gap: 26px;
   font-size: 15px;
   color: var(--t2);
-  margin-inline-start: auto;
+  margin-inline: auto;
 }
 
 .nav-links a {
@@ -134,10 +136,19 @@ a {
   color: #fff;
 }
 
+.nav .btn {
+  height: 42px;
+  padding: 0 20px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.nav .btn-light::before {
+  display: none;
+}
+
 @media (max-width: 780px) {
   .nav-links { display: none; }
-  .nav .bar { padding-inline: 18px 8px; }
-  .brand { margin-inline-end: auto; }
 }
 
 /* BUTTONS WITH ORBITING LIGHT RING (M3rab signature) */
@@ -201,16 +212,6 @@ a {
 .btn-glass:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.4);
-}
-
-.nav .btn {
-  height: 44px;
-  padding: 0 20px;
-  font-size: 14px;
-}
-
-.nav .btn-light::before {
-  display: none;
 }
 
 /* HERO SECTION */
