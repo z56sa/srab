@@ -58,37 +58,27 @@ export default function Home() {
             </a>
           </div>
 
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', fontSize: '13px', color: 'var(--t3)', marginTop: '-45px', marginBottom: '20px' }}>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', fontSize: '13px', color: 'var(--t3)', marginTop: '-45px', marginBottom: '60px' }}>
             <span>• مجاني للجميع</span>
             <span>• 180 ميغا</span>
             <span>• تحديث تلقائي</span>
           </div>
-        </div>
-      </header>
 
-      {/* FILM VIDEO SHOWCASE (desktop application window style) */}
-      <section className="film-section pad" id="film">
-        <div className="wrap film-grid">
-          <div className="film-text">
-            <h2 className="h2 metal">سراب في ثوانٍ.</h2>
-            <p className="sub">
-              خطوة وحدة تمشي فيك من اللعبة بالإنجليزي، لين تثبّت تعريبها وتلعبها بالعربي الكامل.
-            </p>
-          </div>
-          <div className="app-window-wrap">
-            <div className="app-window">
-              <div className="app-window-header">
-                <div className="app-window-title">
+          {/* DESKTOP APP SHOWCASE (WIDE 16:9 PC WINDOW) */}
+          <div className="hero-stage">
+            <div className="pc-window">
+              <div className="pc-window-header">
+                <div className="pc-window-title">
                   <span className="app-dot"></span>
-                  <span>سراب — منصة التعريبات</span>
+                  <span>سراب — منصة التعريبات العربية</span>
                 </div>
-                <div className="app-window-controls">
+                <div className="pc-window-controls">
                   <span>—</span>
                   <span>▢</span>
                   <span className="close-btn">✕</span>
                 </div>
               </div>
-              <div className="app-window-body">
+              <div className="pc-window-body">
                 <video 
                   src="/hero.mp4" 
                   autoPlay 
@@ -103,7 +93,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* CORE STATEMENT */}
       <section className="pad">
