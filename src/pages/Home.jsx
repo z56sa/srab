@@ -30,57 +30,57 @@ export default function Home() {
 
   return (
     <>
-      {/* HERO SECTION */}
+      {/* HERO SECTION - SPLIT LAYOUT */}
       <header className="hero">
         <div className="aura-glow"></div>
-        <div className="wrap">
-          <div className="pill">
-            <b>جديد</b>
-            <span>منصة سراب متوفرة الآن بنسختها الأحدث</span>
-          </div>
+        <div className="wrap hero-split">
 
-          <h1>
-            <span className="metal">ألعابك بالعربي.</span>
-          </h1>
+          {/* نص - اليمين */}
+          <div className="hero-content">
+            <div className="pill">
+              <b>جديد</b>
+              <span>منصة سراب متوفرة الآن بنسختها الأحدث</span>
+            </div>
 
-          <p className="lead">
-            مكتبة تعريبات الألعاب العربية. تختار لعبتك، تضغط تثبيت، وتلعبها بالعربي،
-            والتعريب يتحدّث ويتصلح من نفسه دون تعقيد.
-          </p>
+            <h1>
+              <span className="metal">ألعابك بالعربي.</span>
+            </h1>
 
-          <div className="cta">
-            <a href={DOWNLOAD_URL} className="btn btn-light" download="Srab-Setup-1.0.0.exe">
-              <span>بدأ التحميل</span>
-            </a>
+            <p className="lead">
+              مكتبة تعريبات الألعاب العربية. تختار لعبتك، تضغط تثبيت، وتلعبها بالعربي،
+              والتعريب يتحدّث ويتصلح من نفسه دون تعقيد.
+            </p>
 
-            <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="btn btn-glass">
-              <span>انضم لسيرفر Discord</span>
-            </a>
-          </div>
+            <div className="cta">
+              <a href={DOWNLOAD_URL} className="btn btn-light" download="Srab-Setup-1.0.0.exe">
+                <span>بدأ التحميل</span>
+              </a>
+              <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="btn btn-glass">
+                <span>انضم لسيرفر Discord</span>
+              </a>
+            </div>
 
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', fontSize: '13px', color: 'var(--t3)', marginTop: '-45px', marginBottom: '60px' }}>
-            <span>• مجاني للجميع</span>
-            <span>• 180 ميغا</span>
-            <span>• تحديث تلقائي</span>
-          </div>
-
-          {/* DESKTOP APP SHOWCASE (WIDE 16:9 PC WINDOW) */}
-          <div className="hero-stage">
-            <div className="pc-window">
-              <div className="pc-window-body">
-                <video 
-                  src="/hero.mp4" 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                  poster="/hero-poster.jpg"
-                >
-                  <source src="/hero.mp4" type="video/mp4" />
-                </video>
-              </div>
+            <div className="hero-stats">
+              <span>• مجاني للجميع</span>
+              <span>• 180 ميغا</span>
+              <span>• تحديث تلقائي</span>
             </div>
           </div>
+
+          {/* فيديو - اليسار */}
+          <div className="hero-visual">
+            <video
+              src="/hero.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="/hero-poster.jpg"
+            >
+              <source src="/hero.mp4" type="video/mp4" />
+            </video>
+          </div>
+
         </div>
       </header>
 

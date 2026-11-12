@@ -217,9 +217,87 @@ a {
 /* HERO SECTION */
 .hero {
   position: relative;
-  padding: 160px 0 60px;
-  text-align: center;
+  padding: 140px 0 80px;
   overflow: hidden;
+}
+
+/* SPLIT LAYOUT: فيديو يسار + نص يمين */
+.hero-split {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* النص - يمين (أول عنصر في RTL = يمين) */
+.hero-content {
+  flex: 1;
+  min-width: 0;
+  text-align: right;
+}
+
+.hero-content .pill {
+  margin-bottom: 28px;
+}
+
+.hero-content h1 {
+  margin: 0 0 20px;
+  max-width: 14em;
+  font: 700 clamp(38px, 5.5vw, 80px)/1.15 var(--brand-font);
+  letter-spacing: -1px;
+}
+
+.hero-content .lead {
+  margin: 0 0 36px;
+  max-width: 28em;
+  font-size: 17px;
+  color: var(--t2);
+  line-height: 1.8;
+}
+
+.hero-content .cta {
+  justify-content: flex-start;
+  margin-bottom: 24px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--t3);
+  flex-wrap: wrap;
+}
+
+/* الفيديو - يسار (ثاني عنصر في RTL = يسار) */
+.hero-visual {
+  flex: 0 0 54%;
+  position: relative;
+}
+
+.hero-visual video {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 50px 140px -20px rgba(0,0,0,0.95), 0 0 80px -10px rgba(255,255,255,0.12);
+}
+
+@media (max-width: 900px) {
+  .hero-split {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .hero-content {
+    text-align: center;
+  }
+  .hero-content .cta {
+    justify-content: center;
+  }
+  .hero-stats {
+    justify-content: center;
+  }
+  .hero-visual {
+    width: 100%;
+    flex: none;
+  }
 }
 
 /* Background radial ambient aura */
@@ -256,27 +334,11 @@ a {
   font-size: 11px;
 }
 
-.hero h1 {
-  margin: 10px auto 20px;
-  max-width: 14em;
-  font: 700 clamp(44px, 7vw, 100px)/1.15 var(--brand-font);
-  letter-spacing: -1px;
-}
-
-.hero .lead {
-  margin: 0 auto 36px;
-  max-width: 32em;
-  font-size: 19px;
-  color: var(--t2);
-  line-height: 1.8;
-}
-
 .hero .cta {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  justify-content: center;
-  margin-bottom: 70px;
+  margin-bottom: 0;
 }
 
 /* APP FRAME HERO PREVIEW */
