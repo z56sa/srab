@@ -66,27 +66,40 @@ export default function Home() {
         </div>
       </header>
 
-      {/* FILM VIDEO SHOWCASE (m3rab-style phone mockup) */}
+      {/* FILM VIDEO SHOWCASE (desktop application window style) */}
       <section className="film-section pad" id="film">
         <div className="wrap film-grid">
           <div className="film-text">
-            <h2 className="h2 metal">سراب في 25 ثانية.</h2>
+            <h2 className="h2 metal">سراب في ثوانٍ.</h2>
             <p className="sub">
               خطوة وحدة تمشي فيك من اللعبة بالإنجليزي، لين تثبّت تعريبها وتلعبها بالعربي الكامل.
             </p>
           </div>
-          <div className="phone-wrap">
-            <div className="phone-device">
-              <video 
-                src="/hero.mp4" 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                poster="/hero-poster.jpg"
-              >
-                <source src="/hero.mp4" type="video/mp4" />
-              </video>
+          <div className="app-window-wrap">
+            <div className="app-window">
+              <div className="app-window-header">
+                <div className="app-window-title">
+                  <span className="app-dot"></span>
+                  <span>سراب — منصة التعريبات</span>
+                </div>
+                <div className="app-window-controls">
+                  <span>—</span>
+                  <span>▢</span>
+                  <span className="close-btn">✕</span>
+                </div>
+              </div>
+              <div className="app-window-body">
+                <video 
+                  src="/hero.mp4" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  poster="/hero-poster.jpg"
+                >
+                  <source src="/hero.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
           </div>
         </div>

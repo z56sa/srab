@@ -307,7 +307,7 @@ a {
   padding: 120px 0;
 }
 
-/* FILM SECTION (m3rab.app device showcase) */
+/* FILM SECTION (Desktop App Window Showcase) */
 .film-section {
   position: relative;
   overflow: hidden;
@@ -316,7 +316,7 @@ a {
 .film-grid {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 100px;
+  gap: 80px;
   align-items: center;
   max-width: 1260px;
   margin: 0 auto;
@@ -331,33 +331,72 @@ a {
   max-width: 24em;
   color: var(--t2);
 }
-.phone-wrap {
-  perspective: 1400px;
+.app-window-wrap {
   display: flex;
   justify-content: center;
-}
-.phone-device {
   position: relative;
-  width: min(560px, 92vw);
+}
+.app-window {
+  position: relative;
+  width: min(520px, 90vw);
+  background: #0d0f12;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.95), 0 0 80px -10px rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+.app-window-header {
+  height: 38px;
+  background: #14171d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  font-size: 13px;
+  color: var(--t2);
+  user-select: none;
+}
+.app-window-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.app-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00ffaa;
+  box-shadow: 0 0 8px #00ffaa;
+}
+.app-window-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: #777;
+}
+.app-window-controls span {
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.app-window-controls span:hover {
+  color: #fff;
+}
+.app-window-controls .close-btn:hover {
+  color: #ff5555;
+}
+.app-window-body {
+  position: relative;
+  width: 100%;
   aspect-ratio: 9 / 16;
-  border-radius: 48px;
-  padding: 13px;
-  background: linear-gradient(150deg, #3a3a3a, #0c0c0c 35%, #222 70%, #0a0a0a);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22), 0 80px 180px -40px #000, 0 0 180px -20px rgba(255, 255, 255, 0.35);
+  background: #000;
+  overflow: hidden;
 }
-.phone-device::before {
-  content: "";
-  position: absolute;
-  inset: -35%;
-  z-index: -1;
-  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.18), transparent);
-}
-.phone-device video {
+.app-window-body video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 36px;
-  background: #000;
   display: block;
 }
 @media (max-width: 900px) {
