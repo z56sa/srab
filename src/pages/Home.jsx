@@ -30,45 +30,44 @@ export default function Home() {
 
   return (
     <>
-      {/* HERO SECTION - SPLIT LAYOUT */}
+      {/* HERO SECTION - centered like m3rab */}
       <header className="hero">
         <div className="aura-glow"></div>
-        <div className="wrap hero-split">
-
-          {/* نص - اليمين */}
-          <div className="hero-content">
-            <div className="pill">
-              <b>جديد</b>
-              <span>منصة سراب متوفرة الآن بنسختها الأحدث</span>
-            </div>
-
-            <h1>
-              <span className="metal">ألعابك بالعربي.</span>
-            </h1>
-
-            <p className="lead">
-              مكتبة تعريبات الألعاب العربية. تختار لعبتك، تضغط تثبيت، وتلعبها بالعربي،
-              والتعريب يتحدّث ويتصلح من نفسه دون تعقيد.
-            </p>
-
-            <div className="cta">
-              <a href={DOWNLOAD_URL} className="btn btn-light" download="Srab-Setup-1.0.0.exe">
-                <span>بدأ التحميل</span>
-              </a>
-              <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="btn btn-glass">
-                <span>انضم لسيرفر Discord</span>
-              </a>
-            </div>
-
-            <div className="hero-stats">
-              <span>• مجاني للجميع</span>
-              <span>• 180 ميغا</span>
-              <span>• تحديث تلقائي</span>
-            </div>
+        <div className="wrap">
+          <div className="pill">
+            <b>جديد</b>
+            <span>منصة سراب متوفرة الآن بنسختها الأحدث</span>
           </div>
 
-          {/* فيديو - اليسار */}
-          <div className="hero-visual">
+          <h1>
+            <span className="metal">ألعابك بالعربي.</span>
+          </h1>
+
+          <p className="lead">
+            مكتبة تعريبات الألعاب العربية. تختار لعبتك، تضغط تثبيت، وتلعبها بالعربي،
+            والتعريب يتحدّث ويتصلح من نفسه دون تعقيد.
+          </p>
+
+          <div className="cta">
+            <a href={DOWNLOAD_URL} className="btn btn-light" download="Srab-Setup-1.0.0.exe">
+              <span>بدأ التحميل</span>
+            </a>
+            <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="btn btn-glass">
+              <span>انضم لسيرفر Discord</span>
+            </a>
+          </div>
+
+          <ul className="facts">
+            <li>مجاني للجميع</li>
+            <li>180 ميغا</li>
+            <li>تحديث تلقائي</li>
+          </ul>
+        </div>
+
+        {/* APP WINDOW STAGE - like m3rab */}
+        <div className="stage">
+          <div className="stage-glow"></div>
+          <div className="appwin">
             <video
               src="/hero.mp4"
               autoPlay
@@ -80,7 +79,6 @@ export default function Home() {
               <source src="/hero.mp4" type="video/mp4" />
             </video>
           </div>
-
         </div>
       </header>
 
