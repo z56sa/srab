@@ -77,7 +77,6 @@ export default function Home() {
                 muted
                 playsInline
                 poster="/hero-poster.jpg"
-                style={{ transform: 'scaleX(-1)' }}
               >
                 <source src="/hero.mp4" type="video/mp4" />
               </video>
