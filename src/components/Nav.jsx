@@ -18,11 +18,11 @@ export default function Nav() {
         <div className="nav-links">
           <Link to="/" className={pathname === '/' ? 'active' : ''}>الرئيسية</Link>
           <Link to="/library" className={pathname === '/library' ? 'active' : ''}>المكتبة</Link>
-          <a href="https://discord.gg/uXEpd8wc9T" target="_blank" rel="noreferrer">ديسكورد</a>
+          <a href="https://discord.gg/z4Cm2VAnQw" target="_blank" rel="noreferrer">ديسكورد</a>
         </div>
 
         <a 
-          href="https://discord.gg/uXEpd8wc9T" 
+          href="https://discord.gg/z4Cm2VAnQw" 
           target="_blank" 
           rel="noreferrer" 
           className="btn btn-light"

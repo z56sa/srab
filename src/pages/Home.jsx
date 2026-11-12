@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const DOWNLOAD_URL = 'https://github.com/z56sa/mode/releases/download/v1.0.0/srab.exe'
-const DISCORD_URL = 'https://discord.gg/uXEpd8wc9T'
+const DISCORD_URL = 'https://discord.gg/z4Cm2VAnQw'
 const API_URL = '/games.json'
 
 function getAppId(game) {
