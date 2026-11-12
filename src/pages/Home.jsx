@@ -58,21 +58,10 @@ export default function Home() {
             </a>
           </div>
 
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', fontSize: '13px', color: 'var(--t3)', marginTop: '-45px', marginBottom: '60px' }}>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', fontSize: '13px', color: 'var(--t3)', marginTop: '-45px', marginBottom: '20px' }}>
             <span>• مجاني للجميع</span>
             <span>• 180 ميغا</span>
             <span>• تحديث تلقائي</span>
-          </div>
-
-          {/* APP STAGE PREVIEW */}
-          <div className="hero-stage">
-            <div className="hero-screen">
-              <img 
-                src="/app-clean.jpg" 
-                alt="واجهة تطبيق سراب" 
-                onError={(e) => { e.target.style.display = 'none' }}
-              />
-            </div>
           </div>
         </div>
       </header>
