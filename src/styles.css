@@ -267,17 +267,19 @@ a {
   flex-wrap: wrap;
 }
 
-/* الفيديو - يسار (ثاني عنصر في RTL = يسار) */
+/* الفيديو - اليسار (ثاني عنصر في RTL = يسار) */
 .hero-visual {
   flex: 0 0 54%;
   position: relative;
+  align-self: flex-end;
+  padding-bottom: 0;
 }
 
 .hero-visual video {
   width: 100%;
   display: block;
-  border-radius: 18px;
-  box-shadow: 0 50px 140px -20px rgba(0,0,0,0.95), 0 0 80px -10px rgba(255,255,255,0.12);
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -20px 60px -10px rgba(0,0,0,0.6);
 }
 
 @media (max-width: 900px) {
