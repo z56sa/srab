@@ -67,17 +67,6 @@ export default function Home() {
           {/* DESKTOP APP SHOWCASE (WIDE 16:9 PC WINDOW) */}
           <div className="hero-stage">
             <div className="pc-window">
-              <div className="pc-window-header">
-                <div className="pc-window-title">
-                  <span className="app-dot"></span>
-                  <span>سراب — منصة التعريبات العربية</span>
-                </div>
-                <div className="pc-window-controls">
-                  <span>—</span>
-                  <span>▢</span>
-                  <span className="close-btn">✕</span>
-                </div>
-              </div>
               <div className="pc-window-body">
                 <video 
                   src="/hero.mp4" 
