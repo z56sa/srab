@@ -67,10 +67,14 @@ export default function Home() {
           {/* APP STAGE PREVIEW */}
           <div className="hero-stage">
             <div className="hero-screen">
-              <img 
-                src="/app-clean.jpg" 
-                alt="واجهة تطبيق سراب" 
-                onError={(e) => { e.target.style.display = 'none' }}
+              <video 
+                src="/hero.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                poster="/app-clean.jpg"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 'inherit' }}
               />
             </div>
           </div>
