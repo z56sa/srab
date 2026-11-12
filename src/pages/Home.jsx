@@ -64,20 +64,39 @@ export default function Home() {
           </ul>
         </div>
 
-        {/* APP WINDOW STAGE - like m3rab */}
+        {/* APP WINDOW STAGE - video + text side by side */}
         <div className="stage">
-          <div className="stage-glow"></div>
-          <div className="appwin">
-            <video
-              src="/hero.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              poster="/hero-poster.jpg"
-            >
-              <source src="/hero.mp4" type="video/mp4" />
-            </video>
+          <div className="stage-inner">
+
+            {/* فيديو - يسار */}
+            <div className="stage-video">
+              <video
+                src="/hero.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster="/hero-poster.jpg"
+                style={{ transform: 'scaleX(-1)' }}
+              >
+                <source src="/hero.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            {/* كلام - يمين */}
+            <div className="stage-text">
+              <h2 className="h2 metal">سراب في ثوان.</h2>
+              <p className="stage-lead">
+                خطوة واحدة تمشي فيك من اللعبة بالإنجليزي، لن تثبّت تعريبها وتلعبها بالعربي الكامل.
+              </p>
+              <ul className="feature-list">
+                <li><span className="feat-check">✓</span> تثبيت تلقائي بضغطة واحدة</li>
+                <li><span className="feat-check">✓</span> تحديث التعريب بدون أي تدخل</li>
+                <li><span className="feat-check">✓</span> إصلاح ذكي للملفات المكسورة</li>
+                <li><span className="feat-check">✓</span> دعم Steam و Epic Games</li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </header>
