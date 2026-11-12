@@ -86,13 +86,13 @@ export default function Home() {
             <div className="stage-text">
               <h2 className="h2 metal">سراب في ثوان.</h2>
               <p className="stage-lead">
-                خطوة واحدة تمشي فيك من اللعبة بالإنجليزي، لن تثبّت تعريبها وتلعبها بالعربي الكامل.
+                ضغطة وحدة تكفي. سراب يكتشف لعبتك، يثبّت التعريب، ويشغّلها بالعربي الكامل بدون أي تعقيد.
               </p>
               <ul className="feature-list">
-                <li><span className="feat-check">✓</span> تثبيت تلقائي بضغطة واحدة</li>
-                <li><span className="feat-check">✓</span> تحديث التعريب بدون أي تدخل</li>
-                <li><span className="feat-check">✓</span> إصلاح ذكي للملفات المكسورة</li>
-                <li><span className="feat-check">✓</span> دعم Steam و Epic Games</li>
+                <li>تثبيت تلقائي بضغطة واحدة</li>
+                <li>تحديث التعريب بدون أي تدخل</li>
+                <li>إصلاح ذكي للملفات المكسورة</li>
+                <li>دعم Steam و Epic Games</li>
               </ul>
             </div>
 
