@@ -73,9 +73,12 @@ export default function Home() {
                 loop 
                 muted 
                 playsInline
-                poster="/app-clean.jpg"
+                controls={false}
+                poster="/hero-poster.jpg"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 'inherit' }}
-              />
+              >
+                <source src="/hero.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
