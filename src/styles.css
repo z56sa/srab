@@ -311,23 +311,23 @@ a {
 .film-section {
   position: relative;
   overflow: hidden;
-  padding: 60px 0 120px;
+  padding: 40px 0 140px;
 }
 .film-grid {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 80px;
+  gap: 100px;
   align-items: center;
-  max-width: 1100px;
+  max-width: 1260px;
   margin: 0 auto;
 }
 .film-text .h2 {
-  font-size: clamp(38px, 4.5vw, 60px);
+  font-size: clamp(42px, 5vw, 68px);
   margin-bottom: 24px;
 }
 .film-text .sub {
-  font-size: 20px;
-  line-height: 1.7;
+  font-size: 22px;
+  line-height: 1.8;
   max-width: 24em;
   color: var(--t2);
 }
@@ -338,25 +338,25 @@ a {
 }
 .phone-device {
   position: relative;
-  width: min(440px, 88vw);
+  width: min(560px, 92vw);
   aspect-ratio: 9 / 16;
-  border-radius: 44px;
-  padding: 11px;
+  border-radius: 48px;
+  padding: 13px;
   background: linear-gradient(150deg, #3a3a3a, #0c0c0c 35%, #222 70%, #0a0a0a);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22), 0 60px 140px -30px #000, 0 0 140px -20px rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22), 0 80px 180px -40px #000, 0 0 180px -20px rgba(255, 255, 255, 0.35);
 }
 .phone-device::before {
   content: "";
   position: absolute;
-  inset: -30%;
+  inset: -35%;
   z-index: -1;
-  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.16), transparent);
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.18), transparent);
 }
 .phone-device video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 34px;
+  border-radius: 36px;
   background: #000;
   display: block;
 }
