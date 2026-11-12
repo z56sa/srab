@@ -67,22 +67,41 @@ export default function Home() {
           {/* APP STAGE PREVIEW */}
           <div className="hero-stage">
             <div className="hero-screen">
+              <img 
+                src="/app-clean.jpg" 
+                alt="واجهة تطبيق سراب" 
+                onError={(e) => { e.target.style.display = 'none' }}
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* FILM VIDEO SHOWCASE (m3rab-style phone mockup) */}
+      <section className="film-section pad" id="film">
+        <div className="wrap film-grid">
+          <div className="film-text">
+            <h2 className="h2 metal">سراب في 25 ثانية.</h2>
+            <p className="sub">
+              خطوة وحدة تمشي فيك من اللعبة بالإنجليزي، لين تثبّت تعريبها وتلعبها بالعربي الكامل.
+            </p>
+          </div>
+          <div className="phone-wrap">
+            <div className="phone-device">
               <video 
                 src="/hero.mp4" 
                 autoPlay 
                 loop 
                 muted 
                 playsInline
-                controls={false}
                 poster="/hero-poster.jpg"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 'inherit' }}
               >
                 <source src="/hero.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
         </div>
-      </header>
+      </section>
 
       {/* CORE STATEMENT */}
       <section className="pad">
